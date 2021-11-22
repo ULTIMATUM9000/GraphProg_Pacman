@@ -1,0 +1,14 @@
+﻿  gameengine.cpp
+  gameobject.cpp
+  ghostai.cpp
+  graphics.cpp
+  input.cpp
+  main.cpp
+  Sounds.cpp
+  vector3.cpp
+C:\Users\kylep\Desktop\Game Development\Graphics Programming\Finals\GraphProg_Pacman\vector3.cpp(90,9): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\kylep\Desktop\Game Development\Graphics Programming\Finals\GraphProg_Pacman\vector3.cpp(96,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\kylep\Desktop\Game Development\Graphics Programming\Finals\GraphProg_Pacman\vector3.cpp(97,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\kylep\Desktop\Game Development\Graphics Programming\Finals\GraphProg_Pacman\vector3.cpp(98,20): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  GraphProg_Pacman.vcxproj -> C:\Users\kylep\Desktop\Game Development\Graphics Programming\Finals\GraphProg_Pacman\Debug\GraphProg_Pacman.exe

@@ -24,7 +24,6 @@ Food PowerPellet[5];
 bool PowerPellettruth[5]= { 1,1,1,1,1 };
 bool activate = false; //activate power pellet
 float PowerPelletRed = 255.0f;
-bool darken = true; //if power pellet not active
 clock_t startAnimTime = 0; //powerpellet glowing time
 clock_t endAnimTime = 0; //powerpellet end time
 int animElapsed = 0;

@@ -5,7 +5,7 @@ bool wallhitleft =false, wallhitright=false, wallhitup=false, wallhitdown=false;
 
 Player dummy ;
 
-float speed = 0.5f; //speed of the movement
+float speed = 3.5f; //speed of the movement
 
 
 void Input::isPressed(Keys letter) //this is double check?

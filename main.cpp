@@ -23,17 +23,23 @@ bool Pellettruth[363] = { 1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,
 Food PowerPellet[5];
 bool PowerPellettruth[5]= { 1,1,1,1,1 };
 bool activate = false; //activate power pellet
+float PowerPelletRed = 255.0f;
+bool darken = true; //if power pellet not active
+clock_t startAnimTime = 0; //powerpellet glowing time
+clock_t endAnimTime = 0; //powerpellet end time
+int animElapsed = 0;
 
 Ghost ghost[4];
 bool Ghosttruth[4] = { 1,1,1,1 };
 
 clock_t startTime = 0; //run only if activate pellet
 clock_t endTime = 0; //run on time
-int elapsed = 0; //timer
+float elapsed = 0; //timer
 
 int death=0;
 void Initialize() { 
 	SoundBegin();
+
 	dummy.Position.X = -0.5f;
 	dummy.Position.Y = -10.5f;
 
@@ -689,6 +695,7 @@ void Update() {
 	CheckGhostCollision();
 	CheckPelletCollision();
 	CheckPowerPelletTimer();
+	PowerPelletBlinking();
 	CheckWallCollision();
 	CheckOutOfBounds();
 }
@@ -825,6 +832,28 @@ void CheckPowerPelletTimer()
 		ghost[2].SetColor(1.0f, 0.0f, 1.0f, 0.0f); //Violet
 		ghost[3].SetColor(1.0f, 0.5f, 0.0f, 0.0f); //Orange
 	}
+}
+
+void PowerPelletBlinking()
+{
+	endAnimTime = clock();
+
+	animElapsed = int((endAnimTime - startAnimTime) / CLOCKS_PER_SEC);
+
+	if (animElapsed % 2 == 0)
+	{
+		PowerPelletRed = 0.0f;
+	}
+	else
+	{
+		PowerPelletRed = 255.0f;
+	}
+
+	PowerPellet[0].SetColor(PowerPelletRed / 255, 0, 0, 0);
+	PowerPellet[1].SetColor(PowerPelletRed / 255, 0, 0, 0);
+	PowerPellet[2].SetColor(PowerPelletRed / 255, 0, 0, 0);
+	PowerPellet[3].SetColor(PowerPelletRed / 255, 0, 0, 0);
+	PowerPellet[4].SetColor(PowerPelletRed / 255, 0, 0, 0);
 }
 
 void CheckWallCollision()

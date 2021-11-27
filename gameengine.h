@@ -19,6 +19,7 @@ void CheckDeath();
 void CheckGhostCollision();
 void CheckPelletCollision();
 void CheckPowerPelletTimer();
+void PowerPelletBlinking();
 void CheckWallCollision();
 void CheckOutOfBounds();
 
